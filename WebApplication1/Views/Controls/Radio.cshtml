@@ -1,0 +1,27 @@
+﻿@{ ViewData["Title"] = "Radio"; }
+
+<h2>Radio</h2>
+<form method="post">
+
+    <div>
+        <p><b>Month</b></p>
+        <input name="first" style="display:none" value="Month" />
+        <p><input class="form-check-input" name="second" type="radio" value="January">January</p>
+        <p><input class="form-check-input" name="second" type="radio" value="February"> February</p>
+        <p><input class="form-check-input" name="second" type="radio" value="March"> March</p>
+        <p><input class="form-check-input" name="second" type="radio" value="April"> April</p>
+        <p><input class="form-check-input" name="second" type="radio" value="May"> May</p>
+        <p><input class="form-check-input" name="second" type="radio" value="June"> June</p>
+        <p><input class="form-check-input" name="second" type="radio" value="July"> July</p>
+        <p><input class="form-check-input" name="second" type="radio" value="August"> August</p>
+        <p><input class="form-check-input" name="second" type="radio" value="September"> September</p>
+        <p><input class="form-check-input" name="second" type="radio" value="October"> October</p>
+        <p><input class="form-check-input" name="second" type="radio" value="November"> November</p>
+        <p><input class="form-check-input" name="second" type="radio" value="December"> December</p>
+    </div>
+
+    <div>
+        <button name="submit" type="submit" formaction="~/Controls/ShowResult" class="btn btn-secondary">Submit</button>
+    </div>
+
+</form>

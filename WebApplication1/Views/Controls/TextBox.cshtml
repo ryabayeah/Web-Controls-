@@ -1,0 +1,15 @@
+﻿@{ ViewData["Title"] = "Text Box"; }
+
+<h2>Text Box</h2>
+<form method="post">
+
+    <div>
+        <p><b>Text</b></p>
+        <input name="first" style="display:none" value="Text" />
+        <input name="second" style="width:300px; margin:10px;" />
+    </div>
+    <div>
+        <button name="submit" type="submit" formaction="~/Controls/ShowResult" class="btn btn-secondary">Submit</button>
+    </div>
+
+</form>

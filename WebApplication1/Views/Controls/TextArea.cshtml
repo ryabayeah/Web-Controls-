@@ -1,0 +1,17 @@
+﻿
+@{ ViewData["Title"] = "Text Area"; }
+
+<h2>Text Area</h2>
+<form method="post">
+
+    <div>
+        <p><b>Text</b></p>
+        <input name="first" style="display:none" value="Text" />
+        <textarea name="second"> </textarea>
+    </div>
+
+    <div>
+        <button name="submit" type="submit" formaction="~/Controls/ShowResult" class="btn btn-secondary">Submit</button>
+    </div>
+
+</form>

@@ -1,0 +1,14 @@
+﻿
+@{ ViewData["Title"] = "Check Box"; }
+
+<h2>Check Box</h2>
+<form method="post">
+    <div>
+        <input name="first" style="display:none" value="isSelected" />
+        <input type="checkbox" name="second" value="True">
+    </div>
+    <div>
+        <button name="submit" type="submit" formaction="~/Controls/ShowResult" class="btn btn-secondary">Submit</button>
+    </div>
+
+</form>

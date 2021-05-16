@@ -55,7 +55,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public IActionResult ResetPassword(string action )
+        public IActionResult ResetPassword(string action, string email)
         {
             if (action == "verify")
                 {
@@ -69,8 +69,18 @@ namespace WebApplication1.Controllers
                 }
             else
                 {
+                try
+                {
+                    var addr = new System.Net.Mail.MailAddress(email);
                     ViewBag.MessageState = "Email";
                     ViewBag.Message = "Check your email";
+                }
+                catch
+                {
+                    ViewBag.MessageState = "Email";
+                    ViewBag.Message = "Email address is incorrect";
+                }
+  
                 }
             return View("ResetPassword");
         }

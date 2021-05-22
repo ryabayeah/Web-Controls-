@@ -21,30 +21,38 @@ namespace WebApplication1.Controllers
         public IActionResult SignUpResult() { return View(); }
 
         [HttpGet]
-        public IActionResult SignUp() { ViewBag.secondPage = false; return View(); }
+        public IActionResult SignUp() { return View(); }
+        public IActionResult SignUp2() { return View(); }
 
         [HttpPost]
         public IActionResult SignUp(SignUpModel model)
         {
             if (model.Email == null)
             {
-                ViewBag.secondPage = true;
-                return View("SignUp");
+                ViewBag.Let = false;
+                return View("SignUp2");
             }
             else
             {
                 if (!ModelState.IsValid)
                 {
-                    ViewBag.secondPage = true;
-                    return View("SignUp");
+                    ViewBag.Let = true;
+                    return View("SignUp2");
                 }
-                else 
+                else if (model.Password != model.Confirm)
+                {
+                    ViewBag.Let = true;
+                    ViewBag.Message = "Password mismatch";
+                    return View("SignUp2");
+                }
+                else
                 {
                     user.Email = model.Email;
                     user.Password = model.Password;
-                    return View("SignUpResult", model); 
+                    return View("SignUpResult", model);
                 }
             }
+            return View("SignUp2", model);
         }
 
         [HttpGet]

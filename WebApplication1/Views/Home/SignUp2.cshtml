@@ -1,0 +1,44 @@
+﻿@model WebApplication1.Models.SignUpModel
+
+@{
+    ViewData["Title"] = "Sign Up";
+}
+<h1>Sign Up</h1>
+<form method="post">
+    <input type="hidden" asp-for="FN" />
+    <input type="hidden" asp-for="LN" />
+    <input type="hidden" asp-for="Gender" />
+    <input type="hidden" asp-for="Day" />
+    <input type="hidden" asp-for="Month" />
+    <input type="hidden" asp-for="Year" />
+
+    <label><b>Email</b></label><br />
+    <input type="text" asp-for="Email" /><br />
+    @if (ViewBag.Let)
+    {
+        <span asp-validation-for="Email"></span>
+    }
+
+    <br />
+    <label><b>Password</b></label><br />
+    <input type="text" asp-for="Password" /><br />
+    @if (ViewBag.Let)
+    {
+        <span asp-validation-for="Password"></span>
+    }
+    <br />
+    <label><b>Confirm password</b></label><br />
+    <input type="text" asp-for="Confirm" /><br />
+    @if (ViewBag.Let)
+    {
+        <span asp-validation-for="Confirm"></span>
+    }
+    <label style="color:red;">
+        <b>@ViewBag.Message</b>
+    </label><br />br />
+
+    <input type="checkbox" name="Remember" value="true" />
+    <label>Remember?</label>
+
+    <p><input class="btn btn-secondary" name="submit" type="submit" value="Complete Sign Up" /></p>
+</form>

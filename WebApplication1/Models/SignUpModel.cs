@@ -20,15 +20,16 @@ namespace WebApplication1.Models
 
         public string Gender { get; set; }
 
-        [Required]
+
+        [Required(ErrorMessage =  "Enter email")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Enter password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Repeate password")]
         [DataType(DataType.Password)]
         public string Confirm { get; set; }
     }

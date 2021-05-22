@@ -8,8 +8,10 @@ namespace WebApplication1.Models
 {
     public class SignUpModel
     {
+        [Required(ErrorMessage = "Enter first name")]
         public string FN { get; set; }
-       
+
+        [Required(ErrorMessage = "Enter last name")]
         public string LN { get; set; }
 
         public string Day { get; set; }

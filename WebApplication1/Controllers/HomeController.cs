@@ -27,7 +27,11 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public IActionResult SignUp(SignUpModel model)
         {
-            if (model.Email == null)
+            if (model.FN == null || model.LN == null)
+            {
+                return View("SignUp");
+            }
+            else if (model.Email == null)
             {
                 ViewBag.Let = false;
                 return View("SignUp2");
